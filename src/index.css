@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #778DA9, 0 0 10px #778DA9, 0 0 15px #778DA9;
+  }
+  to {
+    box-shadow: 0 0 10px #778DA9, 0 0 20px #778DA9, 0 0 30px #778DA9;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D1B2A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #415A77;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #778DA9;
+}
+
+/* Prevent flash of unstyled content */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
